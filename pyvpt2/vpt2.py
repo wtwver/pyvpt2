@@ -252,14 +252,14 @@ def vpt2(mol, options=None):
 
                     elif fermi2[j, k, i]:
                         delta = 1 / (omega[i] + omega[j] + omega[k])
-                        delta += 1 / (omega[i] + omega[j] - omega[k])
+                        delta -= 1 / (omega[i] + omega[j] - omega[k])
                         delta += 1 / (omega[i] - omega[j] + omega[k])
                         chi[i, j] += (phi_ijk[i, j, k] ** 2) * delta / 2
 
                     elif fermi2[k, i, j]:
                         delta = 1 / (omega[i] + omega[j] + omega[k])
                         delta += 1 / (-omega[i] + omega[j] + omega[k])
-                        delta += 1 / (omega[i] + omega[j] - omega[k])
+                        delta -= 1 / (omega[i] + omega[j] - omega[k])
                         chi[i, j] += (phi_ijk[i, j, k] ** 2) * delta / 2
 
                     else:
